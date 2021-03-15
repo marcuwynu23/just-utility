@@ -1,15 +1,19 @@
 #include <iostream>
 
+using std::cout;
+using std::endl;
+using std::string;
+
 int main(int argc, char const *argv[])
 {
+	string arg1,cmd;
 	if(argv[1] != NULL){
-		std::string arg1 = argv[1];
-		std::string cmd = "explorer "+ arg1;
-
+		arg1 = argv[1];
+		cmd = "explorer "+ arg1;
 		system(cmd.c_str());
 	}else{
-		std::cout << "open html file in default browser." << std::endl;
-		std::cout << "<wr> <html file>" << std::endl;
+		cout << "open html file in default browser." << endl;
+		cout << "<wr> <html file>" << endl;
 	}
 	return 0;
 } 

@@ -9,13 +9,16 @@ using std::endl;
 
 int main(int argc, char const *argv[])
 {
+	string arg1,arg2;
+	string cmd1,cmd2,cmd3;
+
 	/*interpret cpp source*/
 	if (argv[1] !=NULL){
-		string arg1 = argv[1];
-		string arg2 = "out";
-		string cmd1 = "g++ -o" + arg2+ " " + arg1+".cpp";
-		string cmd2 = arg2;
-		string cmd3 = "del out.exe";
+		arg1 = argv[1];
+		arg2 = "out";
+		cmd1 = "g++ -o" + arg2+ " " + arg1+".cpp";
+		cmd2 = arg2;
+		cmd3 = "del out.exe";
 		
 		auto start = std::chrono::system_clock::now();
 		system(cmd1.c_str());

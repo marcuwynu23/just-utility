@@ -1,6 +1,9 @@
  #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::string;
+
 void show_help(){
 	cout << "jarc <option>" << endl;
 	cout << "option: " << endl;
@@ -24,9 +27,13 @@ string replace(string str,string ch,string name){
 
 int main(int argc, char const *argv[])
 {
+
+	string option,sources,classes,manifest,output,package_name;
+	string cmd1,cmd2,cmd3,cmd4,cmd5;
+
 	if(argv[1] != NULL)
 	{
-		string option = argv[1];
+		option = argv[1];
 		if(option == "init")
 		{
 			system("md build dist");
@@ -38,26 +45,27 @@ int main(int argc, char const *argv[])
 		}else if (option == "compile")
 		{
 
-			string sources= "@build\\sources.list";
-			string classes= "@build\\classes.list";
-			string manifest="Manifest.MF";
-			string output="project.jar";
-			string cmd1 = "javac -d . " + sources;
-			
-			string cmd2 = "md dist";
-			string cmd3 = "jar -cvfm dist\\"+output+" "+manifest+" "+classes;
-			string cmd4 = "rd /Q /S com";
+			sources= "@build\\sources.list";
+			classes= "@build\\classes.list";
+			manifest="Manifest.MF";
+			output="project.jar";
+			cmd1 = "javac -d . " + sources;
+			cmd2 = "md dist";
+			cmd3 = "jar -cvfm dist\\"+output+" "+manifest+" "+classes;
+			cmd4 = "rd /Q /S com";
+
 			system(cmd1.c_str());
 			system(cmd2.c_str());
 			system(cmd3.c_str());
 			system(cmd4.c_str());
+			
 		}else if (option == "run")
 		{
 			system("java -jar dist\\project.jar");
 		}else if (option == "mk"){
-			string package_name = argv[2];
+			package_name = argv[2];
 			package_name =  replace(package_name,".","\\");
-			string cmd5 = "md "+ package_name;
+			cmd5 = "md "+ package_name;
 			system(cmd5.c_str());
 			return 0;
 
