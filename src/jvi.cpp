@@ -10,12 +10,12 @@ using std::endl;
 
 int main(int argc, char const *argv[])
 {
+	string arg1,cmd1,cmd2;
 	/*interpret cpp source*/
 	if (argv[1] !=NULL){
-		string arg1 = argv[1];
-		
-		string cmd1 = "javac " + arg1+ ".java && java " + arg1;
-		string cmd2 = "del *.class";
+		arg1 = argv[1];
+		cmd1 = "javac " + arg1+ ".java && java " + arg1;
+		cmd2 = "del *.class";
 
 		auto start = std::chrono::system_clock::now();
 		system(cmd1.c_str());
