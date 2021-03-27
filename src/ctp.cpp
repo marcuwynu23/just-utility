@@ -1,62 +1,73 @@
-
 #include <iostream>
+#include "header\runner.h"
+
 
 int main(int argc, char const *argv[])
 {
 	std::string projectname,language;
-	std::string cmd,cmd2,cmd3,cmd4,cmd5,cmd6,cmd7;
+	std::string cmd,cmd2,cmd3,cmd4,cmd5,cmd6,cmd7,cmd8;
 
-	if(argv[1] != NULL && argv[2] != NULL){
+	if(argv[1] != NULL && argv[2] != NULL)
+	{
 		projectname = argv[2];
 		language = argv[1];
-		if (language == "java"){
+		if (language == "java")
+		{
 			cmd = "md "+projectname+ "\\"+"src";
-			system(cmd.c_str());
+			peculiar::runExe(cmd);
 			cmd2 = "md "+projectname + "\\doc\\screenshots";
-			system(cmd2.c_str());
+			peculiar::runExe(cmd2);
 			cmd2 = "cf "+projectname+"\\doc\\docs.html";
-			system(cmd2.c_str());
+			peculiar::runExe(cmd2);
 
-		}else if(language == "python"){
+		}
+		else if(language == "python")
+		{
 			cmd = "md "+projectname+"\\"+"app";
 			cmd5 = "cf "+projectname+"\\"+"main.py";
+			cmd8 = "cf "+projectname+"\\"+"setup.py";
 			cmd2 = "md "+projectname + "\\doc\\screenshots";
-			system(cmd2.c_str());
+			peculiar::runExe(cmd2);
 			cmd2 = "cf "+projectname+"\\doc\\docs.html";
-			system(cmd.c_str());
-			system(cmd2.c_str());
-			system(cmd5.c_str());
+			peculiar::runExe(cmd);
+			peculiar::runExe(cmd2);
+			peculiar::runExe(cmd5);
+			peculiar::runExe(cmd8);
 
-		}else if(language == "web") {
-			cmd2 = "md "+projectname + "\\screenshots";
-			system(cmd2.c_str());
-			cmd = "md "+projectname+"\\"+"js";
-			system(cmd.c_str());
-			cmd6 = 	"md "+projectname+"\\"+"css";
-			system(cmd6.c_str());
-			cmd7 = 	"md "+projectname+"\\"+"pages";
-			system(cmd7.c_str());
-			cmd5 = "cf "+projectname+"\\"+"index.html";
-			system(cmd5.c_str());
 		}
-		else {
+		else if(language == "web") 
+		{
+			cmd2 = "md "+projectname + "\\screenshots";
+			peculiar::runExe(cmd2);
+			cmd = "md "+projectname+"\\"+"js";
+			peculiar::runExe(cmd);
+			cmd6 = 	"md "+projectname+"\\"+"css";
+			peculiar::runExe(cmd6);
+			cmd7 = 	"md "+projectname+"\\"+"pages";
+			peculiar::runExe(cmd7);
+			cmd5 = "cf "+projectname+"\\"+"index.html";
+			peculiar::runExe(cmd5);
+		}
+		else 
+		{
 			cmd = "md "+projectname+"\\"+"src";
-			system(cmd.c_str());
+			peculiar::runExe(cmd);
 			cmd2 = "md "+projectname + "\\doc\\screenshots";
-			system(cmd2.c_str());
+			peculiar::runExe(cmd2);
 			cmd2 = "cf "+projectname+"\\doc\\docs.html";
-			system(cmd2.c_str());
+			peculiar::runExe(cmd2);
 		}
 		
 		cmd3 = "cf "+projectname + "\\"+"LICENSE";
 		cmd4 = "cf "+projectname + "\\"+"README.txt";
 		
-		system(cmd3.c_str());
-		system(cmd4.c_str());
-	}else{
-
-		std::cout << "build project structure." << std::endl;
-		std::cout << "<ctp> <project-type |language> <project-name>" << std::endl;
+		peculiar::runExe(cmd3);
+		peculiar::runExe(cmd4);
+	}
+	else
+	{
+		peculiar::print("build project structure.");
+		peculiar::print("<ctp> <project-type |language> <project-name>");
 
 	}
 	return 0;

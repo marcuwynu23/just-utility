@@ -2,15 +2,12 @@
 #include <iostream>
 #include <chrono>
 #include <ctime>
-
-using std::string;
-using std::cout;
-using std::endl;
+#include "header\runner.h"
 
 int main(int argc, char const *argv[])
 {
-	string arg1,arg2;
-	string cmd1,cmd2,cmd3;
+	std::string arg1,arg2;
+	std::string cmd1,cmd2,cmd3;
 
 	/*interpret cpp source*/
 	if (argv[1] !=NULL){
@@ -21,18 +18,17 @@ int main(int argc, char const *argv[])
 		cmd3 = "del out.exe";
 		
 		auto start = std::chrono::system_clock::now();
-		system(cmd1.c_str());
-		system(cmd2.c_str());
-		system(cmd3.c_str());
+		peculiar::runExe(cmd1);
+		peculiar::runExe(cmd2);
+		peculiar::runExe(cmd3);
 		auto end = std::chrono::system_clock::now();
 
 		std::chrono::duration<double> elapsed_seconds = end-start;
 		std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-		cout <<"\nElapsed_seconds : " << elapsed_seconds.count() <<endl;
-		
+		std::cout << "\nElapsed_seconds : "  << elapsed_seconds.count() << std::endl;
 	}else{
-		cout <<"interpret cpp source file."<<std::endl;
-		cout <<"   cppi <sourcefile name> ";
+		peculiar::print("interpret cpp source file.");
+		peculiar::print("   cppi <sourcefile name> ");
 	}
 	return 0;
 }

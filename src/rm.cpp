@@ -1,20 +1,17 @@
 #include <iostream>
-
-using std::string;
-using std::cout;
-using std::endl;
+#include "header\runner.h"
 
 int main(int argc, char const *argv[])
 {
-	string arg1,cmd;
+	std::string arg1,cmd;
 
 	if(argv[1] != NULL){
-		string arg1 = argv[1];
-		string cmd = "del "+ arg1;
-		system(cmd.c_str());
+		arg1 = argv[1];
+		cmd = "del "+ arg1;
+		peculiar::runExe(cmd);
 	}else{
-		cout << "remove a file." << endl;
-		cout << "<rm> <file>" << endl;
+		peculiar::print("remove a file.");
+		peculiar::print("<rm> <file>");
 	}
 	return 0;
 } 
