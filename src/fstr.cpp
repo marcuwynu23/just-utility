@@ -1,4 +1,5 @@
 #include <iostream>
+#include "header\runner.h"
 
 int main(int argc, char const *argv[])
 {
@@ -9,15 +10,14 @@ int main(int argc, char const *argv[])
 		arg2 = argv[2];
 		cmd1 = "findstr /O /N /X "+ arg2 + " *."+arg1;
 		cmd2 = "findstr /O /N "+ arg2 + " *."+arg1;
-		std::cout << "Exact Result:" <<std::endl;
-		system(cmd1.c_str());
-		std::cout << "" <<std::endl;
-		std::cout << "Other Result:" <<std::endl;
-		system(cmd2.c_str());
+		peculiar::print("Exact Result:");
+		peculiar::runExe(cmd1);
+		peculiar::print("Other Result:");
+		peculiar::runExe(cmd2);
 
 	}else{
-		std::cout << "find string in source files in current directory." << std::endl;
-		std::cout << "<fstr> <source extension> <string>" << std::endl;
+		peculiar::print("find string in source files in current directory.");
+		peculiar::print("<fstr> <source extension> <string>");
 	}
 	return 0;
 } 

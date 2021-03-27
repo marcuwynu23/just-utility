@@ -1,8 +1,9 @@
 #include <iostream>
-using std::cout;
-using std::endl;
-int main(){
-	system("explorer .");
-	cout << "open file explorer in current directory" << endl;
+#include "header\runner.h"
+
+int main()
+{
+	peculiar::runExe("explorer .");
+	peculiar::print("open file explorer in current directory");
 	return 0;
 } 

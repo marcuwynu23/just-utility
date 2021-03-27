@@ -1,19 +1,17 @@
 #include <iostream>
+#include "header\runner.h"
 
-using std::cout;
-using std::endl;
-using std::string;
 
 int main(int argc, char const *argv[])
 {
-	string arg1,cmd;
+	std::string arg1,cmd;
 	if(argv[1] != NULL){
 		arg1 = argv[1];
 		cmd = "explorer "+ arg1;
-		system(cmd.c_str());
+		peculiar::runExe(cmd);
 	}else{
-		cout << "open html file in default browser." << endl;
-		cout << "<wr> <html file>" << endl;
+		peculiar::print("open html file in default browser.");
+		peculiar::print("<wr> <html file>");
 	}
 	return 0;
 } 

@@ -1,3 +1,4 @@
 #include <iostream>
+#include "header\runner.h"
 
-int main(){ system("dir /ON /B"); return 0;}
+int main(){ peculiar::runExe("dir /ON /B"); return 0;}

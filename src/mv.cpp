@@ -1,20 +1,17 @@
 #include <iostream>
-
-using std::string;
-using std::cout;
-using std::endl;
+#include "header\runner.h"
 
 int main(int argc, char const *argv[]){
-	string arg1,arg2,cmd;
+	std::string arg1,arg2,cmd;
 
 	if(argv[1] != NULL && argv[2]!=NULL){
 		arg1 = argv[1];
 		arg2 = argv[2];
 		cmd = "move "+ arg1 + " "+arg2;
-		system(cmd.c_str());
+		peculiar::runExe(cmd);
 	}else{
-		cout << "move a file." << endl;
-		cout << "<move> <file> <distination>" << endl;
+		peculiar::print("move a file.");
+		peculiar::print("<move> <file> <distination>");
 	}
 	return 0;
 } 
