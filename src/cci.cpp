@@ -18,15 +18,20 @@ int main(int argc, char const *argv[])
 		cmd2 = arg2;
 		cmd3 = "del out.exe";
 		
-		auto start = std::chrono::system_clock::now();
+		auto s1 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd1);
+		auto e1 = std::chrono::system_clock::now();
+		auto s2 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd2);
+		auto e2 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd3);
-		auto end = std::chrono::system_clock::now();
+		
 
-		std::chrono::duration<double> elapsed_seconds = end-start;
-		std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-		std::cout << "\nElapsed_seconds : "  << elapsed_seconds.count() << std::endl;
+		std::chrono::duration<double> compile_time = e1-s1;
+		std::chrono::duration<double> running_time = e2-s2;
+		std::cout << "\ncompile time: " << compile_time.count() <<"s" << std::endl;
+		std::cout << "running time: " << running_time.count() <<"s" << std::endl;
+		
 	}else{
 		peculiar::print("interpreting c source file.");
 		peculiar::print("   cci <sourcefile name> ");

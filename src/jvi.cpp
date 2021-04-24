@@ -6,22 +6,27 @@
 
 int main(int argc, char const *argv[])
 {
-	std::string arg1,cmd1,cmd2;
+	std::string arg1,cmd1,cmd2,cmd3;
 	/*interpret cpp source*/
 	if (argv[1] !=NULL){
 		arg1 = argv[1];
-		cmd1 = "javac " + arg1+ ".java && java " + arg1;
-		cmd2 = "del *.class";
+		cmd1 = "javac " + arg1+ ".java";
+		cmd2 = "java " + arg1;
+		cmd3 = "del *.class";
 
-		auto start = std::chrono::system_clock::now();
+		auto s1 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd1);
+		auto e1 = std::chrono::system_clock::now();
+		auto s2 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd2);
-		auto end = std::chrono::system_clock::now();
-
-		std::chrono::duration<double> elapsed_seconds = end-start;
-		std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-		std::cout << "\nElapsed_seconds : "  << elapsed_seconds.count() << std::endl;
+		auto e2 = std::chrono::system_clock::now();
+		peculiar::runExe(cmd3);
 		
+		std::chrono::duration<double> compile_time = e1-s1;
+		std::chrono::duration<double> running_time = e2-s2;
+
+		std::cout << "\ncompile time: " << compile_time.count() <<"s" << std::endl;
+		std::cout << "running time: " << running_time.count() <<"s" << std::endl;
 	}else{
 		peculiar::print("interpret java source file.");
 		peculiar::print("jvi <source file name> ");

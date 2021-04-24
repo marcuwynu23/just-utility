@@ -1,17 +1,18 @@
 #include <iostream>
 #include "header\runner.h"
 
-
 int main(int argc, char const *argv[])
 {
-	std::string arg1,cmd;
+ 	// creating source file
 	if(argv[1] != NULL){
+		std::string arg1,cmd;
 		arg1 = argv[1];
-		cmd = "explorer "+ arg1;
+		cmd = "fsutil file layout "+ arg1;
 		peculiar::runExe(cmd);
 	}else{
-		peculiar::print("open html file in default browser.");
-		peculiar::print("<wr> <html file| URL address>");
+		peculiar::print("display file properties.");
+		peculiar::print("   fp <file>");
 	}
 	return 0;
 } 
+

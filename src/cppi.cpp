@@ -11,21 +11,27 @@ int main(int argc, char const *argv[])
 
 	/*interpret cpp source*/
 	if (argv[1] !=NULL){
+		
 		arg1 = argv[1];
 		arg2 = "out";
 		cmd1 = "g++ -o" + arg2+ " " + arg1+".cpp";
 		cmd2 = arg2;
 		cmd3 = "del out.exe";
 		
-		auto start = std::chrono::system_clock::now();
+		auto s1 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd1);
+		auto e1 = std::chrono::system_clock::now();
+		auto s2 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd2);
+		auto e2 = std::chrono::system_clock::now();
 		peculiar::runExe(cmd3);
-		auto end = std::chrono::system_clock::now();
+		
+		std::chrono::duration<double> compile_time = e1-s1;
+		std::chrono::duration<double> running_time = e2-s2;
 
-		std::chrono::duration<double> elapsed_seconds = end-start;
-		std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-		std::cout << "\nElapsed_seconds : "  << elapsed_seconds.count() << std::endl;
+		std::cout << "\ncompile time: " << compile_time.count() <<"s" << std::endl;
+		std::cout << "running time: " << running_time.count() <<"s" << std::endl;
+	
 	}else{
 		peculiar::print("interpret cpp source file.");
 		peculiar::print("   cppi <sourcefile name> ");

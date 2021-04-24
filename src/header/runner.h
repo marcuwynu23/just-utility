@@ -1,33 +1,20 @@
-#include <iostream>
-#include <mutex>
-#include <thread>
 
+#ifndef __RUNNER_H__
+#define __RUNNER_H__
+#ifdef __cplusplus
 
-namespace peculiar
-{
-	void  runExe(std::string value)
+extern "C"{
+#endif
+	namespace peculiar
 	{
-		std::mutex m;
-		std::thread t{[&]
-			{
-				std::lock_guard<std::mutex> lock{m};
-				system(value.c_str());
-			}
-		};
-		t.join();
-	}
-	void print(std::string value){
-		std::mutex m;
-		std::thread t{[&]
-			{
-				std::lock_guard<std::mutex> lock{m};
-				std::cout << value << std::endl;
-			}
-		};
-		t.join();
+		void  runExe(std::string value);
+		void print(std::string value);
 	}
 
+#ifdef __cplusplus
 }
+#endif
+#endif 
 
 
 
