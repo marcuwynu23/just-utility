@@ -19,6 +19,9 @@ int main(int argc, char const *argv[])
 	cout << "rm 				- remove a file." << endl;
 	cout << "snip 				- open snipping tools." << endl;
 	cout << "fstr				- find string in a files." << endl;
+	cout << "fp				    - display file properties." << endl;
+	cout << "cat				- display file content." << endl;
+	cout << "fp				    - display date and time." << endl;
 	system("pause > nul");
 	return 0;
 } 
