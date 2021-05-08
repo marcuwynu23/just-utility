@@ -7,7 +7,7 @@ extern "C"{
 #endif
 	namespace peculiar
 	{
-		void  runExe(std::string value);
+		void runExe(std::string value);
 		void print(std::string value);
 	}
 
