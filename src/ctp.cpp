@@ -67,7 +67,7 @@ int main(int argc, char const *argv[])
 	else
 	{
 		peculiar::print("build project structure.");
-		peculiar::print("<ctp> <project-type |language> <project-name>");
+		peculiar::print("ctp <project-type | language > <project-name>");
 
 	}
 	return 0;
