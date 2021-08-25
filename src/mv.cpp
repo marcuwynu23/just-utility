@@ -1,5 +1,5 @@
 #include <iostream>
-#include "header\runner.h"
+#include "runner.h"
 
 int main(int argc, char const *argv[]){
 	std::string arg1,arg2,cmd;

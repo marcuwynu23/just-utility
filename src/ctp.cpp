@@ -1,5 +1,5 @@
 #include <iostream>
-#include "header\runner.h"
+#include "runner.h"
 
 
 int main(int argc, char const *argv[])
@@ -15,9 +15,9 @@ int main(int argc, char const *argv[])
 		{
 			cmd = "md "+projectname+ "\\"+"src";
 			peculiar::runExe(cmd);
-			cmd2 = "md "+projectname + "\\doc\\screenshots";
+			cmd2 = "md "+projectname + "\\docs\\screenshots";
 			peculiar::runExe(cmd2);
-			cmd2 = "cf "+projectname+"\\doc\\docs.html";
+			cmd2 = "cf "+projectname+"\\docs\\docs.html";
 			peculiar::runExe(cmd2);
 
 		}
@@ -26,9 +26,9 @@ int main(int argc, char const *argv[])
 			cmd = "md "+projectname+"\\"+"app";
 			cmd5 = "cf "+projectname+"\\"+"main.py";
 			cmd8 = "cf "+projectname+"\\"+"setup.py";
-			cmd2 = "md "+projectname + "\\doc\\screenshots";
+			cmd2 = "md "+projectname + "\\docs\\screenshots";
 			peculiar::runExe(cmd2);
-			cmd2 = "cf "+projectname+"\\doc\\docs.html";
+			cmd2 = "cf "+projectname+"\\docs\\docs.html";
 			peculiar::runExe(cmd);
 			peculiar::runExe(cmd2);
 			peculiar::runExe(cmd5);
@@ -48,13 +48,22 @@ int main(int argc, char const *argv[])
 			cmd5 = "cf "+projectname+"\\"+"index.html";
 			peculiar::runExe(cmd5);
 		}
+		else if(language == "c" || language == "cpp" || language == "c++") 
+		{
+			cmd = "md "+projectname+"\\"+"src\\header";
+			peculiar::runExe(cmd);
+			cmd2 = "cf "+projectname + "\\makefile";
+			peculiar::runExe(cmd2);
+			cmd2 = "cf "+projectname+"\\docs\\docs.html";
+			peculiar::runExe(cmd2);
+		}
 		else 
 		{
 			cmd = "md "+projectname+"\\"+"src";
 			peculiar::runExe(cmd);
-			cmd2 = "md "+projectname + "\\doc\\screenshots";
+			cmd2 = "md "+projectname + "\\docs\\screenshots";
 			peculiar::runExe(cmd2);
-			cmd2 = "cf "+projectname+"\\doc\\docs.html";
+			cmd2 = "cf "+projectname+"\\docs\\docs.html";
 			peculiar::runExe(cmd2);
 		}
 		
