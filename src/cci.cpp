@@ -2,7 +2,7 @@
 #include <iostream>
 #include <chrono>
 #include <ctime>
-#include "header\runner.h"
+#include "runner.h"
 
 
 int main(int argc, char const *argv[])

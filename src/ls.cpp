@@ -1,4 +1,4 @@
 #include <iostream>
-#include "header\runner.h"
+#include "runner.h"
 
-int main(){ peculiar::runExe("dir /ON /B"); return 0;}
+int main(){ peculiar::runExe("dir  /B /O-D"); return 0;}
