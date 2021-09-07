@@ -14,7 +14,8 @@ int main(int argc, char const *argv[])
 	std::string cmd,initial;
 	cout <<GREEN+"";
 	peculiar::runExe("cls");
-	cout << GREEN+"Just Utility v0.0.2" << endl;
+	cout << GREEN+"Just Utility v0.0.2
+	" << endl;
 	cout << GREEN+"jvi"+WHITE_BOLD+"		java false interpreter(java jdk)." << endl;
 	cout << GREEN+"cci"+WHITE_BOLD+"		c false interpreter(required mingw)." << endl;
 	cout << GREEN+"cppi"+WHITE_BOLD+"		c++ false interpreter(required mingw)." << endl;
