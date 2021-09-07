@@ -1,7 +1,6 @@
 #include <iostream>
 #include "runner.h"
 
-
 int main(int argc, char const *argv[])
 {
 	std::string projectname,language;
@@ -39,13 +38,40 @@ int main(int argc, char const *argv[])
 		{
 			cmd2 = "md "+projectname + "\\screenshots";
 			peculiar::runExe(cmd2);
-			cmd = "md "+projectname+"\\"+"js";
+			cmd = "md "+projectname+"\\"+"static\\js";
 			peculiar::runExe(cmd);
-			cmd6 = 	"md "+projectname+"\\"+"css";
+			cmd6 = 	"md "+projectname+"\\"+"static\\css";
 			peculiar::runExe(cmd6);
-			cmd7 = 	"md "+projectname+"\\"+"pages";
+			cmd7 = 	"md "+projectname+"\\"+"templates";
 			peculiar::runExe(cmd7);
 			cmd5 = "cf "+projectname+"\\"+"index.html";
+			peculiar::runExe(cmd5);
+		}
+		else if(language == "js-web-app") 
+		{
+			cmd2 = "md "+projectname + "\\bin";
+			peculiar::runExe(cmd2);
+			cmd2 = "cf "+projectname + "\\bin\\www";
+			peculiar::runExe(cmd2);
+			cmd = "md "+projectname+"\\"+"public\\js";
+			peculiar::runExe(cmd);
+			cmd = "md "+projectname+"\\"+"public\\assets\\img";
+			peculiar::runExe(cmd);
+			cmd6 = 	"md "+projectname+"\\"+"public\\css";
+			peculiar::runExe(cmd6);
+			cmd7 = 	"md "+projectname+"\\"+"views";
+			peculiar::runExe(cmd7);
+			cmd7 = 	"md "+projectname+"\\"+"routes";
+			peculiar::runExe(cmd7);		
+			cmd7 = 	"md "+projectname+"\\"+"helpers";
+			peculiar::runExe(cmd7);
+			cmd7 = 	"md "+projectname+"\\"+"databases";
+			peculiar::runExe(cmd7);
+			cmd5 = "md "+projectname+"\\"+"constants";
+			peculiar::runExe(cmd5);		
+			cmd5 = "cf "+projectname+"\\"+"server.js";
+			peculiar::runExe(cmd5);
+			cmd5 = "cf "+projectname+"\\"+"app.js";
 			peculiar::runExe(cmd5);
 		}
 		else if(language == "c" || language == "cpp" || language == "c++") 
@@ -77,7 +103,12 @@ int main(int argc, char const *argv[])
 	{
 		peculiar::print("build project structure.");
 		peculiar::print("ctp <project-type | language > <project-name>");
-
+		peculiar::print("java							java application");
+		peculiar::print("python						python application");
+		peculiar::print("js-web-app				nodejs web application");
+		peculiar::print("c|c++|cpp				c|c++ application");
+		peculiar::print("web 							website");
+		peculiar::print("[any] 						anything");
 	}
 	return 0;
 } 
