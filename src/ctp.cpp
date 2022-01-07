@@ -106,7 +106,7 @@ int main(int argc, char const *argv[])
 		}
 		
 		cmd3 = "cf "+projectname + "\\"+"LICENSE";
-		cmd4 = "cf "+projectname + "\\"+"README.txt";
+		cmd4 = "cf "+projectname + "\\"+"README.md";
 		
 		peculiar::runExe(cmd3);
 		peculiar::runExe(cmd4);
