@@ -1,9 +1,9 @@
-#include <iostream>
+
 #include "runner.h"
 
 int main(int argc, char const *argv[])
 {
-	std::string arg1,arg2,cmd1,cmd2;
+	string arg1,arg2,cmd1,cmd2;
 
 	if(argv[1] != NULL && argv[2] != NULL ){
 		arg1 = argv[1];

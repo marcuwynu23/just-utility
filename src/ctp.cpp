@@ -1,10 +1,10 @@
-#include <iostream>
+
 #include "runner.h"
 
 int main(int argc, char const *argv[])
 {
-	std::string projectname,language;
-	std::string cmd,cmd2,cmd3,cmd4,cmd5,cmd6,cmd7,cmd8;
+	string projectname,language;
+	string cmd,cmd2,cmd3,cmd4,cmd5,cmd6,cmd7,cmd8;
 
 	if(argv[1] != NULL && argv[2] != NULL)
 	{

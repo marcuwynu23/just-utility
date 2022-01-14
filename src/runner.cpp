@@ -1,11 +1,13 @@
-#include <iostream>
+
 #include <mutex>
 #include <thread>
+#include <windows.h>
+#include <shlwapi.h>
 #include "runner.h"
 
 
 
-void  peculiar::runExe(std::string value)
+void  peculiar::runExe(string value)
 {
 	std::mutex m;
 	std::thread t{[&]
@@ -16,14 +18,23 @@ void  peculiar::runExe(std::string value)
 	};
 	t.join();
 }
-void peculiar::print(std::string value){
+void peculiar::print(string value){
 	std::mutex m;
 	std::thread t{[&]
 		{
 			std::lock_guard<std::mutex> lock{m};
-			std::cout << value << std::endl;
+			cout << value << endl;
 		}
 	};
 	t.join();
 }
 
+
+string peculiar::getExecutablePath(){
+	char path[100000];
+	HMODULE hModule = GetModuleHandle(NULL);
+	GetModuleFileName(hModule,path,(sizeof(path)));
+	PathRemoveFileSpec(path);
+
+	return string(path);
+}
