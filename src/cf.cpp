@@ -1,13 +1,10 @@
-#include <iostream>
 #include "runner.h"
-
-
 
 int main(int argc, char const *argv[])
 {
  	// creating source file
 	if(argv[1] != NULL){
-		std::string arg1,cmd;
+		string arg1,cmd;
 		arg1 = argv[1];
 		cmd = "echo. > "+ arg1;
 		peculiar::runExe(cmd);

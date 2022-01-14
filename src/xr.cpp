@@ -1,6 +1,5 @@
-#include <iostream>
-#include "runner.h"
 
+#include "runner.h"
 int main()
 {
 	peculiar::runExe("explorer .");

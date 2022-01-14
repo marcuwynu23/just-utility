@@ -1,17 +1,13 @@
-#include <iostream>
+
 #include "runner.h"
-using std::cout;
-using std::endl;
 
-
-const std::string RESET = "\u001B[0;0m";
-const std::string GREEN = "\u001B[0;92m";
-const std::string WHITE_BOLD = "\u001B[1;97m";
-
+const string RESET = "\u001B[0;0m";
+const string GREEN = "\u001B[0;92m";
+const string WHITE_BOLD = "\u001B[1;97m";
 
 int main(int argc, char const *argv[])
 {
-	std::string cmd,initial;
+	string cmd,initial;
 	cout <<GREEN+"";
 	peculiar::runExe("cls");
 	cout << GREEN+"Just Utility v0.0.2" << endl;

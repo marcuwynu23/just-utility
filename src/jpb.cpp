@@ -1,11 +1,8 @@
-#include <iostream>
+
 #include "runner.h"
 
-using std::cout;
-using std::endl;
-
-std::string option,sources,depends,classes,manifest,output,package_name,file_name;
-std::string cmd1,cmd2,cmd3,cmd5;
+string option,sources,depends,classes,manifest,output,package_name,file_name;
+string cmd1,cmd2,cmd3,cmd5;
 
 void show_help(){
 	cout << "jpb <option>" << endl;
@@ -23,10 +20,10 @@ void show_help(){
 }
 
 
-std::string replace(std::string str,std::string ch,std::string name){
+std::string replace(string str,string ch,string name){
 	size_t pos = 0;
 	if(!ch.empty()){
-		while((pos=str.find(ch,pos)) != std::string::npos){
+		while((pos=str.find(ch,pos)) != string::npos){
 			str.replace(pos,ch.length(),name);
 			pos += name.length();
 		}
@@ -68,24 +65,24 @@ void compile_deps(){
 }
 void mdir(std::string arg2){
 	package_name = arg2;
-	std::string package_named = package_name;
+	string package_named = package_name;
 	package_name =  replace(package_name,".","\\");
 	cmd5 = "md src\\"+ package_name;
 	peculiar::runExe(cmd5);
-	std::cout <<"add to package.properties: " +package_named <<std::endl;
+	cout <<"add to package.properties: " +package_named << endl;
 	peculiar::runExe("echo "+package_named +" >> Jbuild/package.properties");
 }
-void createfile(std::string arg2,std::string arg3){
+void createfile(string arg2,string arg3){
 	package_name = arg2;
-	std::string package_named = package_name;
+	string package_named = package_name;
 	file_name = arg3;
 	package_name = replace(package_name,".","\\");
 	cmd5 = "cf src\\"+package_name+"\\"+file_name;
 	// adding class file config to the classes.list
-	std::cout <<"add to classes.properties: " +package_name <<std::endl;
+	cout <<"add to classes.properties: " +package_name <<endl;
 	peculiar::runExe("echo "+package_name +" >> Jbuild/classes.properties");
 	//adding java file config to the source.list
-	std::cout <<"add to sources.properties: " +package_name+"\\"+file_name <<std::endl;
+	cout <<"add to sources.properties: " +package_name+"\\"+file_name <<endl;
 	peculiar::runExe("echo src\\"+package_name+"\\"+file_name +" >> Jbuild/sources.properties");
 	//creating java file
 	peculiar::runExe(cmd5);
@@ -94,10 +91,10 @@ void createfile(std::string arg2,std::string arg3){
 }
 
 
-void addInManifest(std::string attr, std::string value){
+void addInManifest(string attr,string value){
 	peculiar::runExe("echo "+attr+": "+value+" >> JMANIFEST.info");
 }
-void addDeps(std::string deps){
+void addDeps(string deps){
 	peculiar::runExe("echo "+deps+"; >> Jbuild/depends.properties");
 }
 void docs(){
