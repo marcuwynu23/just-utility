@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 	string cmd,initial;
 	cout <<GREEN+"";
 	peculiar::runExe("cls");
-	cout << GREEN+"Just Utility v0.0.2" << endl;
+	cout << GREEN+"Just Utility Window Commandline Tools" << endl;
 	cout << GREEN+"jvi"+WHITE_BOLD+"		java false interpreter(java jdk)." << endl;
 	cout << GREEN+"cci"+WHITE_BOLD+"		c false interpreter(required mingw)." << endl;
 	cout << GREEN+"cppi"+WHITE_BOLD+"		c++ false interpreter(required mingw)." << endl;
@@ -32,5 +32,7 @@ int main(int argc, char const *argv[])
 	cout << GREEN+"sqlt3"+WHITE_BOLD+"      	run sqlite3 source file." << endl;
 	cout << GREEN+"wif"+WHITE_BOLD+"         	show wifi profile information" << endl;
 	cout << GREEN+"droid"+WHITE_BOLD+"      	run droiddroid commandline" << endl;
+	cout << GREEN+"jr"+WHITE_BOLD+"      	run .jar in java archive 'C:/jar/' directory" << endl;
+	cout << GREEN+"pyr"+WHITE_BOLD+"      	run .py in python scripts 'C:/scripts/py/' directory" << endl;
 	return 0;
 } 
