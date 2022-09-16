@@ -34,5 +34,8 @@ int main(int argc, char const *argv[])
 	cout << GREEN+"droid"+WHITE_BOLD+"      	run droiddroid commandline" << endl;
 	cout << GREEN+"jr"+WHITE_BOLD+"      	run .jar in java archive 'C:/jar/' directory" << endl;
 	cout << GREEN+"pyr"+WHITE_BOLD+"      	run .py in python scripts 'C:/scripts/py/' directory" << endl;
+	cout << GREEN+"ct"+WHITE_BOLD+"      	clone current  instance of terminal." << endl;
+	cout << GREEN+"chrome-dev"+WHITE_BOLD+"      open link using chrome with dev tools" << endl;
+	
 	return 0;
 } 
