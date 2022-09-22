@@ -3,7 +3,7 @@
  set LOCAL_PATH=C:\Users\admin\Desktop\Dev
  set WORK_DIR=JavaNIDE
  set CMD_TERM=cmd
- set EDITOR=subl
+ set EDITOR=code
  set ANDROID_IDE=com.duy.compiler.javanide
  set COM_X=265
  set COM_Y=109

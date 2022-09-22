@@ -21,6 +21,11 @@
 - ctp - create project template structure.
 - cf - create a file.
 - and more..
+### creating releases
+
+##### using git archive
+``git archive --format=zip --prefix= v0.0.1 > just-util.v0.0.1.zip``
+
 ## Contributing
 How to Contribute to this Project Repository:
 1. Fork the Project
@@ -28,5 +33,6 @@ How to Contribute to this Project Repository:
 3. Commit your Changes 
 4. Push to the Branch 
 5. Open a Pull Request
+
 
 Thank you in advance for your contributions! Godbless and Happy Coding! 
