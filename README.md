@@ -20,6 +20,7 @@
 - snip - open snipping tools.
 - ctp - create project template structure.
 - cf - create a file.
+- ct - create a clone of the current terminal instance
 - and more..
 ## Contributing
 How to Contribute to this Project Repository:
