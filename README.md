@@ -1,4 +1,4 @@
- # Just Utilities
+ # Just Utility
  
  <p align="center">
   <img width="25%" height="25%" src="https://github.com/marcuwynu23/just-utility/blob/main/docs/images/1.jpg" />
