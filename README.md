@@ -1,39 +1,42 @@
- # Just Utility
- 
- <p align="center">
-  <img width="25%" height="25%" src="https://github.com/marcuwynu23/just-utility/blob/main/docs/images/1.jpg" />
-   <img width="25%" height="25%" src="https://github.com/marcuwynu23/just-utility/blob/main/docs/images/2.jpg" />
-    <img width="25%" height="25%" src="https://github.com/marcuwynu23/just-utility/blob/main/docs/images/3.jpg" />
+# Just Utility
+
+
+<p align="center">
+  <img width="200" height="200" src="https://github.com/marcuwynu23/just-utility/blob/main/docs/images/1.jpg" />
+  <img width="200" height="200" src="https://github.com/marcuwynu23/just-utility/blob/main/docs/images/2.jpg" />
+  <img width="200" height="200" src="https://github.com/marcuwynu23/just-utility/blob/main/docs/images/3.jpg" />
 </p>
- 
- A commandline Utilities and Tools in window written c++ and uses window buildin utilities and other 3rd party tools 
- automated, compacted and cascaded in a simple command. It is use for easy navigating in the terminal and for learning 
- and developing simple projects, doing experiments,simple networking,etc.
-### Commands
-- justutil - show all available commands.
-- ls - list current directory's file and folder.
-- rm - remove a file.
-- jr - run jar file from (C:\jar location).
-- xr - open windows explorer.
-- wr - open file or link in a default browser.
-- jpb - java project builder tool.
-- snip - open snipping tools.
-- ctp - create project template structure.
-- cf - create a file.
-- ct - create a clone of the current terminal instance
-- and more..
-### creating releases
 
-##### using git archive
-``git archive --format=zip --prefix= v0.0.1 > just-util.v0.0.1.zip``
+A command-line utility and tools for Windows written in C++. It utilizes built-in Windows utilities and other third-party tools, automating and compacting them into simple commands. Just Utility facilitates easy navigation in the terminal and aids in learning, developing simple projects, conducting experiments, and performing basic networking tasks.
 
-## Contributing
-How to Contribute to this Project Repository:
-1. Fork the Project
-2. Create your Branch 
-3. Commit your Changes 
-4. Push to the Branch 
-5. Open a Pull Request
+## Commands
 
+- `justutil`: Show all available commands.
+- `ls`: List files and folders in the current directory.
+- `rm`: Remove a file.
+- `jr`: Run a JAR file from the C:\jar location.
+- `xr`: Open Windows Explorer.
+- `wr`: Open a file or link in the default browser.
+- `jpb`: Java project builder tool.
+- `snip`: Open Snipping Tool.
+- `ctp`: Create project template structure.
+- `cf`: Create a file.
+- `ct`: Create a clone of the current terminal instance.
+- And more...
 
-Thank you in advance for your contributions! Godbless and Happy Coding! 
+### Creating Releases
+
+To create a release using `git archive`:
+
+```shell
+git archive --format=zip --prefix=v0.0.1 > just-util.v0.0.1.zip
+```
+Contributing
+If you'd like to contribute to this project, please follow these steps:
+
+Fork the project.
+Create your branch.
+Commit your changes.
+Push to your branch.
+Open a pull request.
+Thank you in advance for your contributions! Happy coding!
