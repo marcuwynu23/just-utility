@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2023 
+ *   All rights reserved.
+ */
 #include "runner.h"
 
 int main(int argc, char const *argv[]){
