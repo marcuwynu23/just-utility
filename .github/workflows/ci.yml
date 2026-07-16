@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup LLVM/clang
+        uses: egor-tensin/setup-clang-tools@v1
+        with:
+          version: 18
+
+      - name: Check clang++ version
+        run: clang++ --version
+
+      - name: Build all binaries
+        run: make all
+
+      - name: List dist directory
+        run: Get-ChildItem dist
+
+      - name: Run tests
+        run: tests\run.ps1
+        shell: pwsh
+
+      - name: Upload binaries as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: just-utility-binaries
+          path: dist/*.exe
