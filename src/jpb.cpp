@@ -108,8 +108,50 @@ void docs(){
 void run(){
 	system("java -jar dist\\project.jar");
 }
+static void showHelpDetail() {
+    cout << "NAME" << endl;
+    cout << "     jpb - Java Project Builder" << endl;
+    cout << endl;
+    cout << "SYNOPSIS" << endl;
+    cout << "     jpb [--help | -h] <option> [args...]" << endl;
+    cout << endl;
+    cout << "DESCRIPTION" << endl;
+    cout << "     A complete Java project build tool that helps you initialize," << endl;
+    cout << "     manage packages, compile, package, and run Java projects" << endl;
+    cout << "     with dependency management and documentation generation." << endl;
+    cout << endl;
+    cout << "OPTIONS" << endl;
+    cout << "     --help, -h          Show this help message and exit" << endl;
+    cout << "     --init              Initialize a new Java project structure" << endl;
+    cout << "     --md <package>      Create a new package (directory)" << endl;
+    cout << "     --cf <pkg> <file>   Create a source file inside a package" << endl;
+    cout << "     --aim <attr> <val>  Add an attribute to JMANIFEST.info" << endl;
+    cout << "     --adeps <deps>      Add dependencies to the project" << endl;
+    cout << "     --compile           Compile and package into a JAR" << endl;
+    cout << "     --compile-deps      Compile and package with dependencies" << endl;
+    cout << "     --docs              Generate Javadoc documentation" << endl;
+    cout << "     --run               Run the project JAR" << endl;
+    cout << "     --test              Run the test source file" << endl;
+    cout << endl;
+    cout << "DEPENDENCIES" << endl;
+    cout << "     javac (Java Development Kit)" << endl;
+    cout << "     jar (Java Development Kit)" << endl;
+    cout << "     cf (this project's create-file utility)" << endl;
+    cout << endl;
+    cout << "EXAMPLES" << endl;
+    cout << "     jpb --init                    Initialize a project" << endl;
+    cout << "     jpb --md com.example          Create package" << endl;
+    cout << "     jpb --cf com.example Main.java Create a source file" << endl;
+    cout << "     jpb --compile                 Build the JAR" << endl;
+    cout << "     jpb --help                    Show this help" << endl;
+}
+
 int main(int argc, char const *argv[])
 {
+	if (argc > 1) {
+		string a = argv[1];
+		if (a == "--help" || a == "-h") { showHelpDetail(); return 0; }
+	}
 	if(argv[1] != NULL)
 	{
 		option = argv[1];
