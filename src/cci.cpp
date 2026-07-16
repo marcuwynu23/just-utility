@@ -2,21 +2,50 @@
  *   Copyright (c) 2023 
  *   All rights reserved.
  */
- #include <chrono>
+#include <chrono>
 #include <ctime>
 #include "runner.h"
 
+static void showHelp() {
+    cout << "NAME" << endl;
+    cout << "     cci - C source code interpreter (compile + run)" << endl;
+    cout << endl;
+    cout << "SYNOPSIS" << endl;
+    cout << "     cci [--help | -h] <sourcefile>" << endl;
+    cout << endl;
+    cout << "DESCRIPTION" << endl;
+    cout << "     Compiles and runs a C source file in a single step." << endl;
+    cout << "     The source file is compiled with clang, executed, and" << endl;
+    cout << "     the resulting binary is cleaned up automatically." << endl;
+    cout << "     Shows compile time and execution time after running." << endl;
+    cout << endl;
+    cout << "OPTIONS" << endl;
+    cout << "     --help, -h  Show this help message and exit" << endl;
+    cout << endl;
+    cout << "ARGUMENTS" << endl;
+    cout << "     <sourcefile>  Name of the C source file (without .c extension)" << endl;
+    cout << endl;
+    cout << "DEPENDENCIES" << endl;
+    cout << "     clang (LLVM/clang compiler)" << endl;
+    cout << endl;
+    cout << "EXAMPLES" << endl;
+    cout << "     cci hello         Compile and run hello.c" << endl;
+    cout << "     cci --help        Show this help" << endl;
+}
 
 int main(int argc, char const *argv[])
 {
+	if (argc > 1) {
+		string a = argv[1];
+		if (a == "--help" || a == "-h") { showHelp(); return 0; }
+	}
 	string arg1,arg2;
 	string cmd1,cmd2,cmd3;
 
-	/*interpret c source*/
 	if (argv[1] !=NULL){
 		arg1 = argv[1];
 		arg2 = "out";
-		cmd1 = "gcc -o" + arg2+ " " + arg1+".c";
+		cmd1 = "clang -o" + arg2+ " " + arg1+".c";
 		cmd2 = arg2;
 		cmd3 = "del out.exe";
 		
@@ -35,8 +64,7 @@ int main(int argc, char const *argv[])
 		cout << "running time: " << running_time.count() <<"s" << endl;
 		
 	}else{
-		peculiar::print("interpreting c source file.");
-		peculiar::print("   cci <sourcefile name> ");
+		showHelp();
 	}
 	return 0;
 }
