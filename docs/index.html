@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just Utility Documentation</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #333; line-height: 1.6; }
+  h1 { border-bottom: 1px solid #ddd; padding-bottom: 10px; color: #222; }
+  h1 small { font-weight: normal; color: #666; font-size: 14px; }
+  h2 { color: #444; margin-top: 30px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #eee; }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:hover { background: #f8f9fa; }
+  code { background: #f0f0f0; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  a { color: #0366d6; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .desc { color: #555; font-size: 14px; }
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>Just Utility <small>v1.0</small></h1>
+<p>A multi-call binary providing Windows CLI utilities — file management, code interpretation, project scaffolding, and system tools.</p>
+
+<h2>File Operations</h2>
+<table>
+  <tr><th style="width:140px">Command</th><th>Description</th><th style="width:100px">Dependencies</th></tr>
+  <tr><td><a href="cat.html"><code>cat</code></a></td><td>Display file contents</td><td>—</td></tr>
+  <tr><td><a href="cf.html"><code>cf</code></a></td><td>Create an empty file</td><td>—</td></tr>
+  <tr><td><a href="fp.html"><code>fp</code></a></td><td>Display file properties</td><td>fsutil</td></tr>
+  <tr><td><a href="fstr.html"><code>fstr</code></a></td><td>Find string in source files</td><td>findstr</td></tr>
+  <tr><td><a href="lc.html"><code>lc</code></a></td><td>Locate a file or directory</td><td>—</td></tr>
+  <tr><td><a href="ls.html"><code>ls</code></a></td><td>List directory contents</td><td>—</td></tr>
+  <tr><td><a href="mv.html"><code>mv</code></a></td><td>Move or rename a file</td><td>—</td></tr>
+  <tr><td><a href="rm.html"><code>rm</code></a></td><td>Remove a file</td><td>—</td></tr>
+</table>
+
+<h2>Code Interpretation</h2>
+<table>
+  <tr><th style="width:140px">Command</th><th>Description</th><th style="width:100px">Dependencies</th></tr>
+  <tr><td><a href="cci.html"><code>cci</code></a></td><td>C interpreter (compile + run)</td><td>clang</td></tr>
+  <tr><td><a href="cppi.html"><code>cppi</code></a></td><td>C++ interpreter (compile + run)</td><td>clang++</td></tr>
+  <tr><td><a href="csi.html"><code>csi</code></a></td><td>C# interpreter (compile + run)</td><td>csc</td></tr>
+  <tr><td><a href="jvi.html"><code>jvi</code></a></td><td>Java interpreter (compile + run)</td><td>javac/java</td></tr>
+</table>
+
+<h2>Project Scaffolding</h2>
+<table>
+  <tr><th style="width:140px">Command</th><th>Description</th><th style="width:100px">Dependencies</th></tr>
+  <tr><td><a href="arts.html"><code>arts</code></a></td><td>Laravel Artisan command helper</td><td>php</td></tr>
+  <tr><td><a href="ctp.html"><code>ctp</code></a></td><td>Create project templates</td><td>cf</td></tr>
+  <tr><td><a href="jpb.html"><code>jpb</code></a></td><td>Java project builder</td><td>javac/jar</td></tr>
+  <tr><td><a href="sqlt3.html"><code>sqlt3</code></a></td><td>Run SQLite3 source files</td><td>sqlite3</td></tr>
+</table>
+
+<h2>System Utilities</h2>
+<table>
+  <tr><th style="width:140px">Command</th><th>Description</th><th style="width:100px">Dependencies</th></tr>
+  <tr><td><a href="chrome-dev.html"><code>chrome-dev</code></a></td><td>Open Chrome with DevTools</td><td>Chrome</td></tr>
+  <tr><td><a href="ct.html"><code>ct</code></a></td><td>Clone current terminal instance</td><td>—</td></tr>
+  <tr><td><a href="dt.html"><code>dt</code></a></td><td>Display date and time</td><td>—</td></tr>
+  <tr><td><a href="snip.html"><code>snip</code></a></td><td>Open Windows Snipping Tool</td><td>—</td></tr>
+  <tr><td><a href="wif.html"><code>wif</code></a></td><td>Show WiFi profile information</td><td>netsh</td></tr>
+  <tr><td><a href="wr.html"><code>wr</code></a></td><td>Open URL/file in browser</td><td>—</td></tr>
+  <tr><td><a href="xr.html"><code>xr</code></a></td><td>Open Explorer in current directory</td><td>—</td></tr>
+</table>
+
+<h2>Launchers</h2>
+<table>
+  <tr><th style="width:140px">Command</th><th>Description</th><th style="width:100px">Dependencies</th></tr>
+  <tr><td><a href="droid.html"><code>droid</code></a></td><td>Android device helper (droiddroid)</td><td>ADB</td></tr>
+  <tr><td><a href="jr.html"><code>jr</code></a></td><td>Run JAR files from <code>C:/jar/</code></td><td>java</td></tr>
+  <tr><td><a href="pyr.html"><code>pyr</code></a></td><td>Run Python scripts from <code>C:/scripts/py/</code></td><td>python</td></tr>
+  <tr><td><a href="justutil.html"><code>justutil</code></a></td><td>Show this command list</td><td>—</td></tr>
+</table>
+
+<div class="footer">
+  <p>Licensed under the Apache License, Version 2.0.<br>
+  Built with LLVM/clang++ on Windows.</p>
+</div>
+
+</body>
+</html>
