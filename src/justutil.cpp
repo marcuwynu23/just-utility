@@ -1,41 +1,83 @@
-
 #include "runner.h"
 
-const string RESET = "\u001B[0;0m";
-const string GREEN = "\u001B[0;92m";
-const string WHITE_BOLD = "\u001B[1;97m";
+static const string B = "\u001B[1m";    // bold
+static const string G = "\u001B[0;92m"; // green
+static const string C = "\u001B[0;96m"; // cyan
+static const string Y = "\u001B[0;93m"; // yellow
+static const string D = "\u001B[0;90m"; // dim
+static const string N = "\u001B[0m";    // reset
+
+struct Cmd { const char *name; const char *desc; };
+
+static const Cmd CMDS[] = {
+    {"arts",       "Laravel Artisan command helper"},
+    {"cat",        "Display file contents"},
+    {"cci",        "C interpreter (requires clang)"},
+    {"cf",         "Create an empty file"},
+    {"chrome-dev", "Open Chrome with DevTools"},
+    {"cppi",       "C++ interpreter (requires clang++)"},
+    {"csi",        "C# interpreter (requires csc)"},
+    {"ct",         "Clone current terminal instance"},
+    {"ctp",        "Create project templates"},
+    {"droid",      "Android device helper"},
+    {"dt",         "Display date and time"},
+    {"fp",         "Display file properties"},
+    {"fstr",       "Find string in source files"},
+    {"jpb",        "Java project builder"},
+    {"jr",         "Run JAR files from C:/jar/"},
+    {"justutil",   "Show this command list"},
+    {"jvi",        "Java interpreter (requires JDK)"},
+    {"lc",         "Locate a file or directory"},
+    {"ls",         "List directory contents"},
+    {"mv",         "Move or rename a file"},
+    {"pyr",        "Run Python scripts from C:/scripts/py/"},
+    {"rm",         "Remove a file"},
+    {"snip",       "Open Windows Snipping Tool"},
+    {"sqlt3",      "Run SQLite3 source files"},
+    {"wif",        "Show WiFi profile information"},
+    {"wr",         "Open URL/file in browser"},
+    {"xr",         "Open Explorer in current directory"},
+};
+
+static void printCmd(const Cmd &c, bool hilite) {
+    cout << (hilite ? G : D) << "  " << c.name;
+    for (int i = 12 - strlen(c.name); i > 0; i--) cout << ' ';
+    cout << N << c.desc << endl;
+}
+
+static void showHelp() {
+    cout << C << "justutil" << N << " - multi-call binary for Windows CLI utilities" << endl;
+    cout << endl;
+    cout << "Usage: " << Y << "<command> [--help] [arguments...]" << N << endl;
+    cout << endl;
+    cout << B << "Currently defined functions:" << N << endl;
+    cout << endl;
+    for (auto &c : CMDS)
+        printCmd(c, true);
+    cout << endl;
+    cout << "Run \"" << Y << "<command> --help" << N << "\" for detailed usage." << endl;
+    cout << endl;
+}
 
 int main(int argc, char const *argv[])
 {
-	string cmd,initial;
-	cout <<GREEN+"";
-	peculiar::runExe("cls");
-	cout << GREEN+"Just Utility Window Commandline Tools" << endl;
-	cout << GREEN+"jvi"+WHITE_BOLD+"		java false interpreter(java jdk)." << endl;
-	cout << GREEN+"cci"+WHITE_BOLD+"		c false interpreter(required mingw)." << endl;
-	cout << GREEN+"cppi"+WHITE_BOLD+"		c++ false interpreter(required mingw)." << endl;
-	cout << GREEN+"csi"+WHITE_BOLD+"		c# false interpreter." << endl;
-	cout << GREEN+"wr"+WHITE_BOLD+"		browse html file." << endl;
-	cout << GREEN+"xr"+WHITE_BOLD+"		open file explorer in current directory." << endl;
-	cout << GREEN+"cf"+WHITE_BOLD+"		create file." << endl;
-	cout << GREEN+"ctp"+WHITE_BOLD+"		create projects." << endl;
-	cout << GREEN+"jpb"+WHITE_BOLD+"		java project builder." << endl;
-	cout << GREEN+"ls"+WHITE_BOLD+" 		listing files." << endl;
-	cout << GREEN+"mv"+WHITE_BOLD+" 		moving a file." << endl;
-	cout << GREEN+"rm"+WHITE_BOLD+" 		remove a file." << endl;
-	cout << GREEN+"snip"+WHITE_BOLD+" 		open window snipping tools." << endl;
-	cout << GREEN+"fstr"+WHITE_BOLD+"		find string in a files." << endl;
-	cout << GREEN+"fp"+WHITE_BOLD+"         	display file properties." << endl;
-	cout << GREEN+"cat"+WHITE_BOLD+"		display file content." << endl;
-	cout << GREEN+"dt"+WHITE_BOLD+"         	display date and time." << endl;
-	cout << GREEN+"lc"+WHITE_BOLD+"         	location file or directory." << endl;
-	cout << GREEN+"sqlt3"+WHITE_BOLD+"      	run sqlite3 source file." << endl;
-	cout << GREEN+"wif"+WHITE_BOLD+"         	show wifi profile information" << endl;
-	cout << GREEN+"droid"+WHITE_BOLD+"      	run droiddroid commandline" << endl;
-	cout << GREEN+"jr"+WHITE_BOLD+"      	run .jar in java archive 'C:/jar/' directory" << endl;
-	cout << GREEN+"pyr"+WHITE_BOLD+"      	run .py in python scripts 'C:/scripts/py/' directory" << endl;
-	cout << GREEN+"ct"+WHITE_BOLD+"      	clone current  instance of terminal." << endl;
-	cout << GREEN+"chrome-dev"+WHITE_BOLD+"      open link using chrome with dev tools" << endl;
-	
-	return 0;
+    if (argc > 1) {
+        string a = argv[1];
+        if (a == "--help" || a == "-h") { showHelp(); return 0; }
+    }
+
+    cout << C << "Just Utility" << N << " - multi-call binary" << endl;
+    cout << "Usage: " << Y << "<command> [--help] [arguments...]" << N << endl;
+    cout << endl;
+    cout << B << "Currently defined functions:" << N << endl;
+    cout << endl;
+
+    for (size_t i = 0; i < sizeof(CMDS)/sizeof(CMDS[0]); i++) {
+        bool hilite = (i % 2 == 0);
+        printCmd(CMDS[i], hilite);
+    }
+
+    cout << endl;
+    cout << "Run \"" << Y << "<command> --help" << N << "\" for detailed usage." << endl;
+    return 0;
 } 
