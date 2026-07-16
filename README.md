@@ -2,10 +2,6 @@
 
 # Just Utility
 
-<img src="./docs/images/1.jpg" width="160">
-<img src="./docs/images/2.jpg" width="160">
-<img src="./docs/images/3.jpg" width="160">
-
 [![Release](https://img.shields.io/github/v/release/marcuwynu23/just-utility)](https://github.com/marcuwynu23/just-utility/releases)
 [![License](https://img.shields.io/github/license/marcuwynu23/just-utility?logo=github)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/marcuwynu23/just-utility)](https://github.com/marcuwynu23/just-utility/stargazers)
