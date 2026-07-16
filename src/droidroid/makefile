@@ -1,11 +1,12 @@
-SOURCE=droiddroid.cpp
-FLAGS=-std=gnu++11
-BIN=..\..\dist\droiddroid.exe
+CXX = clang++
+CXXFLAGS = -std=c++17
+BIN = ../../dist/droiddroid.exe
 
-all:
-	g++ $(FLAGS) -o $(BIN) $(SOURCE)
-	copy droid.cmd ..\..\dist\
+all: $(BIN)
+
+$(BIN): droiddroid.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
-	del *.exe
+	rm -f $(BIN)
 
