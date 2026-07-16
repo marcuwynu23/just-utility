@@ -1,8 +1,44 @@
-
 #include "runner.h"
+
+static void showHelp() {
+    cout << "NAME" << endl;
+    cout << "     ctp - Create project templates" << endl;
+    cout << endl;
+    cout << "SYNOPSIS" << endl;
+    cout << "     ctp [--help | -h] <language> <project-name>" << endl;
+    cout << endl;
+    cout << "DESCRIPTION" << endl;
+    cout << "     Creates a project directory structure with standard files" << endl;
+    cout << "     for the specified language or project type." << endl;
+    cout << endl;
+    cout << "OPTIONS" << endl;
+    cout << "     --help, -h  Show this help message and exit" << endl;
+    cout << endl;
+    cout << "LANGUAGES" << endl;
+    cout << "     java           Java application structure" << endl;
+    cout << "     python         Python application structure" << endl;
+    cout << "     js-web-app     Node.js / JavaScript web application" << endl;
+    cout << "     php-web-app    PHP web application" << endl;
+    cout << "     c|cpp|c++      C/C++ application structure" << endl;
+    cout << "     web            Static website" << endl;
+    cout << endl;
+    cout << "DEPENDENCIES" << endl;
+    cout << "     cf (this project's create-file utility)" << endl;
+    cout << "     Windows 'md' command for directory creation" << endl;
+    cout << endl;
+    cout << "EXAMPLES" << endl;
+    cout << "     ctp java myapp          Create a Java project skeleton" << endl;
+    cout << "     ctp python myapp        Create a Python project skeleton" << endl;
+    cout << "     ctp web mysite          Create a static website skeleton" << endl;
+    cout << "     ctp --help              Show this help" << endl;
+}
 
 int main(int argc, char const *argv[])
 {
+	if (argc > 1) {
+		string a = argv[1];
+		if (a == "--help" || a == "-h") { showHelp(); return 0; }
+	}
 	string projectname,language;
 	string cmd,cmd2,cmd3,cmd4,cmd5,cmd6,cmd7,cmd8;
 
@@ -150,15 +186,7 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
-		peculiar::print("build project structure.");
-		peculiar::print("ctp <project-type | language > <project-name>");
-		peculiar::print("java							java application");
-		peculiar::print("python							python application");
-		peculiar::print("js-web-app						nodejs web application");
-		peculiar::print("php-web-app						php web application");
-		peculiar::print("c|c++|cpp						c|c++ application");
-		peculiar::print("web							website");
-		peculiar::print("[any]							anything");
+		showHelp();
 	}
 	return 0;
 } 
